@@ -24,8 +24,12 @@ function App() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await axios('https://api.covid19api.com/summary');
-            setCountries(response.data.Countries);
+            try {
+                const response = await axios('https://api.covid19api.com/summary');
+                setCountries(response.data.Countries);
+            } catch (error) {
+                console.log(error);
+            }
         }
         fetchData();
     }, []);

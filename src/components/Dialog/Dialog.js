@@ -14,9 +14,9 @@ function Dialog({title, handleClose, confirmed, deaths, recovered}) {
             <div className='dialog'>
                 <div className='center title'>{title}</div>
                 <div className='line'>
-                    <div>
+                    <div className='icon-container'>
                         <span className='icon-wrapper'>
-                           <img src={confirmedIcon} alt="confirmed"/>
+                           <img className='img' src={confirmedIcon} alt="confirmed"/>
                         </span>
                         <span className='description'>TotalConfirmed</span>
                     </div>
@@ -26,9 +26,9 @@ function Dialog({title, handleClose, confirmed, deaths, recovered}) {
                 </div>
 
                 <div className='line'>
-                    <div>
+                    <div className='icon-container'>
                          <span className='icon-wrapper'>
-                            <img src={deathsIcon} alt="deaths"/>
+                            <img className='img' src={deathsIcon} alt="deaths"/>
                         </span>
                         <span className='description'>TotalDeaths</span>
                     </div>
@@ -38,9 +38,9 @@ function Dialog({title, handleClose, confirmed, deaths, recovered}) {
                 </div>
 
                 <div className='line'>
-                    <div>
+                    <div className='icon-container'>
                          <span className='icon-wrapper'>
-                           <img src={recoveredIcon} alt="recovered"/>
+                           <img className='img' src={recoveredIcon} alt="recovered"/>
                         </span>
                         <span className='description'>TotalRecovered</span>
                     </div>

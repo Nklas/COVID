@@ -8,7 +8,7 @@ function Header({ value, handleChange }) {
         <div className="header">
             <img src={logo} alt="Logo"/>
             <div className="header-line">
-                <h1>STATISTIC</h1>
+                <h1 className='title'>STATISTIC</h1>
                 <Search value={value} handleChange={handleChange}/>
             </div>
         </div>
