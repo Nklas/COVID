@@ -1,16 +1,10 @@
 .wrapper {
   position: fixed;
-  //width: 100vw;
-  //height: 100vh;
-
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-
-
   background-color: #00000080;
-
   z-index: 1;
 }
 
@@ -40,16 +34,28 @@
   .line {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
 
-    margin-top: 52px;
-    margin-bottom: 52px;
+    div {
+      display: flex;
+      flex-direction: row;
+    }
 
     img {
       position: absolute;
     }
 
     .description {
-      margin-left: 67px;
+      margin-left: 27px;
+    }
+
+    .icon-wrapper {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 

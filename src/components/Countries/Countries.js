@@ -1,6 +1,5 @@
 import React from 'react';
 import Country from '../Country/Country';
-import './Countries.scss';
 
 function Countries({countries}) {
     return (
