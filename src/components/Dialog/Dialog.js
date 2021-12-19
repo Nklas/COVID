@@ -5,15 +5,13 @@ import deathsIcon from './deaths.png'
 import recoveredIcon from './recovered.png'
 
 function Dialog({title, handleClose, confirmed, deaths, recovered}) {
-    return (
-        <div
-            className='wrapper'
-            onClick={e => {
-                if(e.target === e.currentTarget) handleClose();
-            }}
-        >
-            <div className='dialog'>
+    const closeDialogOnWrapper = e => {
+        if (e.target === e.currentTarget) handleClose();
+    };
 
+    return (
+        <div className='wrapper' onClick={closeDialogOnWrapper}>
+            <div className='dialog'>
                 <div className='center title'>{title}</div>
                 <div className='line'>
                     <div>
