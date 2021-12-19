@@ -33,8 +33,19 @@
   }
 }
 
+.country:hover {
+  background: rgb(219, 216, 223);
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
 .inverted {
   background-color: #2196F3;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.inverted:hover {
+  background-color: #2196F3;
+  cursor: default;
 }
