@@ -2,8 +2,8 @@ import React, {useEffect, useState, createContext} from 'react';
 import Header from './components/Header/Header.js';
 import Countries from './components/Countries/Countries';
 import Dialog from './components/Dialog/Dialog';
-import axios from "axios/index";
 import './App.scss';
+import * as apiService from './App.service';
 
 export const MyContext = createContext();
 
@@ -23,15 +23,11 @@ function App() {
     const {open, title, confirmed, deaths, recovered} = dialog;
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios('https://api.covid19api.com/summary');
-                setCountries(response.data.Countries);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetchData();
+        apiService.fetchCountries().then((countries) => {
+            //console.log(countries);
+            setCountries(countries);
+        });
+
     }, []);
 
     const handleOpenDialog = ({title, totalConfirmed, totalDeaths, totalRecovered}) => {
@@ -48,7 +44,7 @@ function App() {
 
     const handleChange = event => setSearch(event.target.value);
 
-    const filterCountries = countries => search === '' ? countries : countries.filter(country => country.Country.includes(search));
+    const filterCountries = countries => search === '' ? countries : countries.filter(country => country.Country.toLowerCase().includes(search.toLowerCase()));
 
     return (
         <MyContext.Provider value={handleOpenDialog}>
